@@ -2,7 +2,7 @@
 TARGET = proj4
 TEST_TARGET = tester
 # .cpp files that do not contain a main() function.
-SOURCES = Vec.cpp
+SOURCES = Vec.cpp App.cpp
 
 CPP       = g++ --std=c++11 -c
 CPPFLAGS   = -Wall -I. -g

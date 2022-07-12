@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `main.cpp', needed by `obj'.  Stop.
 
 
-# Make data base, printed on Mon Jul 11 16:03:02 2022
+# Make data base, printed on Tue Jul 12 09:53:50 2022
 
 # Variables
 
@@ -18,12 +18,8 @@ make: *** No rule to make target `main.cpp', needed by `obj'.  Stop.
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # makefile (from `makefile', line 2)
 TARGET = proj4
-# environment
-NVM_INC = /Users/vtn2/.nvm/versions/node/v16.15.0/include/node
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # makefile (from `makefile', line 8)
@@ -38,10 +34,10 @@ INCLUDES := Vec.h
 CURDIR := /Users/vtn2/classes/cs112/cs112-assignment-repos/cs112-proj4-assignment
 # makefile
 SHELL = /bin/sh
- 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
+ 
 _ = /usr/bin/make
 # makefile (from `makefile', line 14)
 rm = rm -f
@@ -54,29 +50,21 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # makefile (from `makefile', line 7)
 CPP = g++ --std=c++11 -c
 # environment
-VSCODE_CWD = /Users/vtn2/classes/cs112/cs112-assignment-repos/cs112-lab4-assignment
+VSCODE_CWD = /
 # environment
-PATH = /Users/vtn2/.nvm/versions/node/v16.15.0/bin:/Users/vtn2/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/vtn2/Library/Android/sdk/tools/bin:/Users/vtn2/Library/Android/sdk/platform-tools:/Users/vtn2/Library/Android/sdk/emulator
+PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-NODE_ENV = development
-# environment
-NVM_BIN = /Users/vtn2/.nvm/versions/node/v16.15.0/bin
+LaunchInstanceID = 04B375AF-DEB7-4F5A-8A32-B8059713ED81
 # environment
 ELECTRON_RUN_AS_NODE = 1
-# environment
-ANDROID_HOME = /Users/vtn2/Library/Android/sdk
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Vgov7MFJnr/Listeners
-# environment
-JDK_HOME = /Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.25I0ZIjC5l/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.euK9b0BV8Q/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.BiaG75Lmee/org.xquartz:0
 # environment
 PWD = /Users/vtn2/classes/cs112/cs112-assignment-repos/cs112-proj4-assignment
 # environment
@@ -88,49 +76,35 @@ HOME = /Users/vtn2
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
 VSCODE_CODE_CACHE_PATH = /Users/vtn2/Library/Application Support/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
 LOGNAME = vtn2
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-NVM_CD_FLAGS = -q
-# environment
-ZSH = /Users/vtn2/.oh-my-zsh
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 3
+SHLVL = 1
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = vtn2
 # makefile
 .DEFAULT_GOAL := all
-# environment
-TERM_SESSION_ID = w1t0p0:C6522283-2316-45F3-972C-365F76324DCB
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # makefile (from `makefile', line 10)
 LFLAGS = -Wall
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -150,19 +124,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.2.9
-# environment
-NVM_DIR = /Users/vtn2/.nvm
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.111409350.111409356.08428E65-643E-4022-9997-6736778B7EC8
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.111409350.111409356
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w1t0p0:C6522283-2316-45F3-972C-365F76324DCB
-# environment
-COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F6:0x0:0x0
 # environment
@@ -172,13 +138,9 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
-ITERM_PROFILE = blue
-# environment
-PAGER = less
-# environment
-ANDROID_SDK_ROOT = /Users/vtn2/Library/Android/sdk
-# environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a5
 # automatic
 ^F = $(notdir $^)
 # default
@@ -186,22 +148,18 @@ SUFFIXES :=
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
-ANDROID_AVD_HOME = /Users/vtn2/.android/avd
-# environment
 MAKELEVEL := 0
 # makefile (from `makefile', line 13)
 OBJECTS := Vec.o
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
- 
-VSCODE_PID = 85953
+VSCODE_PID = 497
 # makefile (from `makefile', line 3)
 TEST_TARGET = tester
 # variable set hash-table stats:
-# Load=92/1024=9%, Rehash=0, Collisions=2/123=2%
+ 
+# Load=71/1024=7%, Rehash=0, Collisions=2/102=2%
 
 # Pattern-specific Variable Values
 
@@ -293,6 +251,7 @@ makefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+ 
 main.cpp:
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -356,6 +315,6 @@ main.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Jul 11 16:03:02 2022
+# Finished Make data base on Tue Jul 12 09:53:50 2022
 
  
