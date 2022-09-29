@@ -46,7 +46,8 @@ Vec App::getVectors(const Vec& startVec) {
         cin >> yorn;
         if (yorn == 'y') {
             Vec v = getVectorFromUser(startVec.getSize());
-            res = res + v;
+            // UNCOMMENT THIS NEXT LINE WHEN YOU HAVE IMPLEMENTED operator+
+            // res = res + v;
         } else {
             break;
         }
