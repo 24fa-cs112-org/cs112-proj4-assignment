@@ -1,4 +1,6 @@
 #define CATCH_CONFIG_MAIN
+#include <cassert>
+
 #include "Vec.h"
 #include "catch.hpp"
 
@@ -342,99 +344,109 @@ TEST_CASE("readFromStream") {
     }
 }
 
-void testConstSubscript(const Vec& v) {
-    //	REQUIRE(v[0] == 11);
-    //	REQUIRE(v[1] == 22);
-    //	REQUIRE(v[2] == 33);
-}
+// void testConstSubscript(const Vec& v) {
+//     assert(v[0] == 11);
+//     assert(v[1] == 22);
+//     assert(v[2] == 33);
+// }
 
-TEST_CASE("subscript") {
-    SECTION("empty case") {
-        //	Vec v0;
-        // REQUIRE_THROWS_AS(v0[0], range_error);
-    }
-    SECTION("non-empty case, non-const version") {
-        //	Vec v1(3);
-        //	v1[0] = 11;
-        //	v1[1] = 22;
-        //	v1[2] = 33;
-        //	REQUIRE(v1.getItem(0) == 11);
-        //	REQUIRE(v1.getItem(1) == 22);
-        //	REQUIRE(v1.getItem(2) == 33);
-    }
-    SECTION("non-empty case, const version") {
-        // testConstSubscript(v1);
-    }
-}
+// TEST_CASE("subscript") {
+//     SECTION("empty case") {
+//         Vec v0;
+//         REQUIRE_THROWS_AS(v0[0], range_error);
+//     }
+//     SECTION("non-empty case, non-const version") {
+//         Vec v1(3);
+//         v1[0] = 11;
+//         v1[1] = 22;
+//         v1[2] = 33;
+//         REQUIRE(v1.getItem(0) == 11);
+//         REQUIRE(v1.getItem(1) == 22);
+//         REQUIRE(v1.getItem(2) == 33);
+//     }
+//     SECTION("non-empty case, const version") {
+//         Vec v1(3);
+//         v1[0] = 11;
+//         v1[1] = 22;
+//         v1[2] = 33;
+//         testConstSubscript(v1);
+//     }
+// }
 
-TEST_CASE("addition") {
-    // Vec v1(3);
-    // Vec v2(3);
-    SECTION("nonempty") {
-        // v1.setItem(0, 1);
-        // v1.setItem(1, 2);
-        // v1.setItem(2, 3);
-        // v2.setItem(0, 2);
-        // v2.setItem(1, 4);
-        // v2.setItem(2, 6);
-        // Vec v3 = v1 + v2;
-        // REQUIRE(v3.getItem(0) == 3);
-        // REQUIRE(v3.getItem(1) == 6);
-        // REQUIRE(v3.getItem(2) == 9);
-    }
-    SECTION("left operand not changed") {
-        // v1.setItem(0, 1);
-        // v1.setItem(1, 2);
-        // v1.setItem(2, 3);
-        // Vec saveV1 = v1;
-        // Vec v3 = v1 + v2;
-        // REQUIRE(v1.getItem(0) == saveV1.getItem(0));
-        // REQUIRE(v1.getItem(1) == saveV1.getItem(1));
-        // REQUIRE(v1.getItem(2) == saveV1.getItem(2));
-    }
-    SECTION("empty") {
-        // Vec v4, v5;
-        // Vec v3 = v4 + v5;
-        // REQUIRE(v3.getSize() == 0);
-        // REQUIRE(v3.getArray() == nullptr);
-    }
-    SECTION("different sizes") {
-        // REQUIRE_THROW_AS(v3 = v2 + v4, invalid_argument);
-    }
-}
+// TEST_CASE("addition") {
+//     Vec v1(3);
+//     Vec v2(3);
+//     SECTION("nonempty") {
+//         v1.setItem(0, 1);
+//         v1.setItem(1, 2);
+//         v1.setItem(2, 3);
+//         v2.setItem(0, 2);
+//         v2.setItem(1, 4);
+//         v2.setItem(2, 6);
+//         Vec v3 = v1 + v2;
+//         REQUIRE(v3.getItem(0) == 3);
+//         REQUIRE(v3.getItem(1) == 6);
+//         REQUIRE(v3.getItem(2) == 9);
+//     }
+//     SECTION("left operand not changed") {
+//         v1.setItem(0, 1);
+//         v1.setItem(1, 2);
+//         v1.setItem(2, 3);
+//         Vec saveV1 = v1;
+//         Vec v3 = v1 + v2;
+//         REQUIRE(v1.getItem(0) == saveV1.getItem(0));
+//         REQUIRE(v1.getItem(1) == saveV1.getItem(1));
+//         REQUIRE(v1.getItem(2) == saveV1.getItem(2));
+//     }
+//     SECTION("empty") {
+//         Vec v4, v5;
+//         Vec v3 = v4 + v5;
+//         REQUIRE(v3.getSize() == 0);
+//         REQUIRE(v3.getArray() == nullptr);
+//     }
+//     SECTION("different sizes") {
+//         Vec v3(1);
+//         Vec v2(2);
+//         Vec v4(3);
+//         REQUIRE_THROWS_AS(v3 = v2 + v4, invalid_argument);
+//     }
+// }
 
-TEST_CASE("subtraction") {
-    // Vec v1(3);
-    // Vec v2(3);
-    SECTION("nonempty") {
-        // v1.setItem(0, 1);
-        // v1.setItem(1, 2);
-        // v1.setItem(2, 3);
-        // v2.setItem(0, 2);
-        // v2.setItem(1, 4);
-        // v2.setItem(2, 6);
-        // Vec v3 = v1 - v2;
-        // REQUIRE(v3.getItem(0) == -1);
-        // REQUIRE(v3.getItem(1) == -2);
-        // REQUIRE(v3.getItem(2) == -3);
-    }
-    SECTION("should not change the left operand") {
-        // v1.setItem(0, 1);
-        // v1.setItem(1, 2);
-        // v1.setItem(2, 3);
-        // Vec saveV1 = v1;
-        // Vec v3 = v1 - v2;
-        // REQUIRE(v1.getItem(0) == saveV1.getItem(0));
-        // REQUIRE(v1.getItem(1) == saveV1.getItem(1));
-        // REQUIRE(v1.getItem(2) == saveV1.getItem(2));
-    }
-    SECTION("empty") {
-        // Vec v4, v5;
-        // v3 = v4 - v5;
-        // REQUIRE(v3.getSize() == 0);
-        // REQUIRE(v3.getArray() == nullptr);
-    }
-    SECTION("different sizes") {
-        // REQUIRE_THROW_AS(v3 = v2 - v4, invalid_argument);
-    }
-}
+// TEST_CASE("subtraction") {
+//     Vec v1(3);
+//     Vec v2(3);
+//     SECTION("nonempty") {
+//         v1.setItem(0, 1);
+//         v1.setItem(1, 2);
+//         v1.setItem(2, 3);
+//         v2.setItem(0, 2);
+//         v2.setItem(1, 4);
+//         v2.setItem(2, 6);
+//         Vec v3 = v1 - v2;
+//         REQUIRE(v3.getItem(0) == -1);
+//         REQUIRE(v3.getItem(1) == -2);
+//         REQUIRE(v3.getItem(2) == -3);
+//     }
+//     SECTION("should not change the left operand") {
+//         v1.setItem(0, 1);
+//         v1.setItem(1, 2);
+//         v1.setItem(2, 3);
+//         Vec saveV1 = v1;
+//         Vec v3 = v1 - v2;
+//         REQUIRE(v1.getItem(0) == saveV1.getItem(0));
+//         REQUIRE(v1.getItem(1) == saveV1.getItem(1));
+//         REQUIRE(v1.getItem(2) == saveV1.getItem(2));
+//     }
+//     SECTION("empty") {
+//         Vec v4, v5;
+//         Vec v3 = v4 - v5;
+//         REQUIRE(v3.getSize() == 0);
+//         REQUIRE(v3.getArray() == nullptr);
+//     }
+//     SECTION("different sizes") {
+//         Vec v3(1);
+//         Vec v2(2);
+//         Vec v4(3);
+//         REQUIRE_THROWS_AS(v3 = v2 - v4, invalid_argument);
+//     }
+// }
