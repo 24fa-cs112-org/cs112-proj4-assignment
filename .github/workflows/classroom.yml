@@ -21,20 +21,47 @@ jobs:
         setup-command: make tester
         command: "./tester -s"
         timeout: 5
+        max-score: 1
     - name: dim0
       id: dim0
       uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: dim0
         setup-command: make proj4
-        command: "./proj4"
+        command: "./proj4 -s"
         input: |-
           0
           y
           n
-        expected-output: |-
-          Starting position:
-          Final position:
+        expected-output: "This application simulates how to move through space by\nadding
+          together any number of vectors of a given size.\nHow many dimensions would
+          you like to work with? Enter starting position: \nDo you want to enter another
+          vector? (y/n): Do you want to enter another vector? (y/n): Starting position:
+          \n\nFinal position: "
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: dim1
+      id: dim1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: dim1
+        setup-command: make proj4
+        command: "./proj4"
+        input: |-
+          1
+          2024
+          y
+          -10
+          y
+          20
+          n
+        expected-output: "This application simulates how to move through space by\nadding
+          together any number of vectors of a given size.\nHow many dimensions would
+          you like to work with? Enter starting position: \nDo you want to enter another
+          vector? (y/n): Do you want to enter another vector? (y/n): Do you want to
+          enter another vector? (y/n): Starting position: 2024\n\nFinal position:
+          2034"
         comparison-method: contains
         timeout: 10
         max-score: 1
@@ -43,5 +70,6 @@ jobs:
       env:
         VEC-TESTS_RESULTS: "${{steps.vec-tests.outputs.result}}"
         DIM0_RESULTS: "${{steps.dim0.outputs.result}}"
+        DIM1_RESULTS: "${{steps.dim1.outputs.result}}"
       with:
-        runners: vec-tests,dim0
+        runners: vec-tests,dim0,dim1
