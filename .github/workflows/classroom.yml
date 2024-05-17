@@ -1,0 +1,47 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Vec tests
+      id: vec-tests
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Vec tests
+        setup-command: make tester
+        command: "./tester -s"
+        timeout: 5
+    - name: dim0
+      id: dim0
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: dim0
+        setup-command: make proj4
+        command: "./proj4"
+        input: |-
+          0
+          y
+          n
+        expected-output: |-
+          Starting position:
+          Final position:
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        VEC-TESTS_RESULTS: "${{steps.vec-tests.outputs.result}}"
+        DIM0_RESULTS: "${{steps.dim0.outputs.result}}"
+      with:
+        runners: vec-tests,dim0
