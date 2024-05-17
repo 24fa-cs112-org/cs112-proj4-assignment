@@ -28,7 +28,7 @@ jobs:
       with:
         test-name: dim0
         setup-command: make proj4
-        command: "./proj4 -s"
+        command: "./proj4"
         input: |-
           0
           y
@@ -60,8 +60,34 @@ jobs:
           together any number of vectors of a given size.\nHow many dimensions would
           you like to work with? Enter starting position: \nDo you want to enter another
           vector? (y/n): Do you want to enter another vector? (y/n): Do you want to
-          enter another vector? (y/n): Starting position: 2024\n\nFinal position:
+          enter another vector? (y/n): Starting position: 2024 \n\nFinal position:
           2034"
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: dim4
+      id: dim4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: dim4
+        setup-command: make proj4
+        command: "./proj4"
+        input: |-
+          4
+          2 0 0 3
+          y
+          21 21 21 21
+          y
+          -21 -21 -21 -21
+          y
+          0 0 2 1
+          n
+        expected-output: "This application simulates how to move through space by\nadding
+          together any number of vectors of a given size.\nHow many dimensions would
+          you like to work with? Enter starting position: \nDo you want to enter another
+          vector? (y/n): Do you want to enter another vector? (y/n): Do you want to
+          enter another vector? (y/n): Do you want to enter another vector? (y/n):
+          Starting position: 2 0 0 3 \n\nFinal position: 2 0 2 4"
         comparison-method: contains
         timeout: 10
         max-score: 1
@@ -71,5 +97,6 @@ jobs:
         VEC-TESTS_RESULTS: "${{steps.vec-tests.outputs.result}}"
         DIM0_RESULTS: "${{steps.dim0.outputs.result}}"
         DIM1_RESULTS: "${{steps.dim1.outputs.result}}"
+        DIM4_RESULTS: "${{steps.dim4.outputs.result}}"
       with:
-        runners: vec-tests,dim0,dim1
+        runners: vec-tests,dim0,dim1,dim4
