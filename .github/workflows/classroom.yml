@@ -13,15 +13,114 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Vec tests
-      id: vec-tests
+    - name: constructors
+      id: constructors
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Vec tests
-        setup-command: make tester
-        command: "./tester -s"
-        timeout: 5
+        test-name: constructors
+        setup-command: make
+        command: "./tester constructors"
+        timeout: 4
         max-score: 1
+    - name: destructor
+      id: destructor
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: destructor
+        setup-command: make
+        command: "./tester destructor"
+        timeout: 10
+        max-score: 1
+    - name: getSize
+      id: getsize
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: getSize
+        setup-command: make
+        command: "./tester getSize"
+        timeout: 10
+        max-score: 1
+    - name: setItem
+      id: setitem
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: setItem
+        setup-command: make
+        command: "./tester setItem"
+        timeout: 10
+        max-score: 1
+    - name: getItem
+      id: getitem
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: getItem
+        setup-command: make
+        command: "./tester getItem"
+        timeout: 10
+        max-score: 1
+    - name: setSize
+      id: setsize
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: setSize
+        setup-command: make
+        command: "./tester setSize"
+        timeout: 10
+        max-score: 1
+    - name: equality
+      id: equality
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: equality
+        setup-command: make
+        command: "./tester equality"
+        timeout: 10
+        max-score: 1
+    - name: writeToStream
+      id: writetostream
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: writeToStream
+        setup-command: make
+        command: "./tester writeToStream"
+        timeout: 10
+        max-score: 1
+    - name: readFrom
+      id: readfrom
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: readFrom
+        setup-command: make
+        command: "./tester readFromStream"
+        timeout: 10
+        max-score: 0
+    - name: subscript
+      id: subscript
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: subscript
+        setup-command: make
+        command: "./tester subscript"
+        timeout: 10
+        max-score: 3
+    - name: addition
+      id: addition
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: addition
+        setup-command: make
+        command: "./tester addition"
+        timeout: 10
+        max-score: 3
+    - name: subtraction
+      id: subtraction
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: subtraction
+        setup-command: make
+        command: "./tester subtraction"
+        timeout: 10
+        max-score: 3
     - name: dim0
       id: dim0
       uses: classroom-resources/autograding-io-grader@v1
@@ -37,10 +136,10 @@ jobs:
           together any number of vectors of a given size.\nHow many dimensions would
           you like to work with? Enter starting position: \nDo you want to enter another
           vector? (y/n): Do you want to enter another vector? (y/n): Starting position:
-          \n\nFinal position: "
+          \nFinal position: "
         comparison-method: contains
         timeout: 10
-        max-score: 1
+        max-score: 3
     - name: dim1
       id: dim1
       uses: classroom-resources/autograding-io-grader@v1
@@ -60,11 +159,10 @@ jobs:
           together any number of vectors of a given size.\nHow many dimensions would
           you like to work with? Enter starting position: \nDo you want to enter another
           vector? (y/n): Do you want to enter another vector? (y/n): Do you want to
-          enter another vector? (y/n): Starting position: 2024 \n\nFinal position:
-          2034"
+          enter another vector? (y/n): Starting position: 2024 \nFinal position: 2034"
         comparison-method: contains
         timeout: 10
-        max-score: 1
+        max-score: 3
     - name: dim4
       id: dim4
       uses: classroom-resources/autograding-io-grader@v1
@@ -87,16 +185,27 @@ jobs:
           you like to work with? Enter starting position: \nDo you want to enter another
           vector? (y/n): Do you want to enter another vector? (y/n): Do you want to
           enter another vector? (y/n): Do you want to enter another vector? (y/n):
-          Starting position: 2 0 0 3 \n\nFinal position: 2 0 2 4"
+          Starting position: 2 0 0 3 \nFinal position: 2 0 2 4"
         comparison-method: contains
         timeout: 10
-        max-score: 1
+        max-score: 4
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        VEC-TESTS_RESULTS: "${{steps.vec-tests.outputs.result}}"
+        CONSTRUCTORS_RESULTS: "${{steps.constructors.outputs.result}}"
+        DESTRUCTOR_RESULTS: "${{steps.destructor.outputs.result}}"
+        GETSIZE_RESULTS: "${{steps.getsize.outputs.result}}"
+        SETITEM_RESULTS: "${{steps.setitem.outputs.result}}"
+        GETITEM_RESULTS: "${{steps.getitem.outputs.result}}"
+        SETSIZE_RESULTS: "${{steps.setsize.outputs.result}}"
+        EQUALITY_RESULTS: "${{steps.equality.outputs.result}}"
+        WRITETOSTREAM_RESULTS: "${{steps.writetostream.outputs.result}}"
+        READFROM_RESULTS: "${{steps.readfrom.outputs.result}}"
+        SUBSCRIPT_RESULTS: "${{steps.subscript.outputs.result}}"
+        ADDITION_RESULTS: "${{steps.addition.outputs.result}}"
+        SUBTRACTION_RESULTS: "${{steps.subtraction.outputs.result}}"
         DIM0_RESULTS: "${{steps.dim0.outputs.result}}"
         DIM1_RESULTS: "${{steps.dim1.outputs.result}}"
         DIM4_RESULTS: "${{steps.dim4.outputs.result}}"
       with:
-        runners: vec-tests,dim0,dim1,dim4
+        runners: constructors,destructor,getsize,setitem,getitem,setsize,equality,writetostream,readfrom,subscript,addition,subtraction,dim0,dim1,dim4
